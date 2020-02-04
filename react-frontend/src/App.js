@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import { Layout, Menu, Breadcrumb, Icon, Button } from 'antd';
 import './App.css';
-import LayoutBack from './components/Layout';
+import LayoutBack from './components/TrackPAGE';
+import Metric from './components/MetricPAGE';
 
 import {Router, Route} from "react-router";
 import { BrowserRouter } from 'react-router-dom'
@@ -23,7 +24,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Route path={"/track"} component={LayoutBack}/>
-          <Route path={"/dashboard"} component={LayoutBack}/>
+          <Route path={"/metric"} component={Metric}/>
         </div>
         {/* <LayoutBack /> */}
       </BrowserRouter>
