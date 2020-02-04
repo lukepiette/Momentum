@@ -1,6 +1,9 @@
 import { Form, Select, Input, Button, Icon } from 'antd';
 import React, { Component } from 'react';
 import CollectionsPage from './AddTrack.jsx';
+import WeekDays from './WeekDays.jsx';
+import ChartClass from "./ChartJS.jsx";
+
 
 const { Option } = Select;
 
@@ -28,7 +31,9 @@ class FormSub extends Component {
       <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit}>
         <div style={{verticalAlign:"middle"}}className="ant-row ant-form-item">
           <h1 className="ant-col ant-col-5"></h1>
-          <h1 style={{fontSize: "30px",marginRight:"20px",fontWeight:"700"}} className="ant-col ant-col-6">Track your metrics</h1>
+          <WeekDays />
+          <h1 className="ant-col ant-col-5"></h1>
+          <h1 style={{fontSize: "30px",marginRight:"20px",fontWeight:"700",marginTop:"2%",marginBottom:"0"}} className="ant-col ant-col-6">Track your progress</h1>
         </div>
         <Form.Item label="Gym (min)">
           {getFieldDecorator('gym', {
@@ -77,6 +82,10 @@ class FormSub extends Component {
             Submit
           </Button>
         </Form.Item>
+        <h1 className="ant-col ant-col-5"></h1>
+        <div style={{width:"600px",height:"400px"}}>
+          <ChartClass Height="20" Width="60" />
+        </div>
       </Form>
     );
   }

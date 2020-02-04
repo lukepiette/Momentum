@@ -3,10 +3,32 @@ import { Layout, Menu, Breadcrumb, Icon, Button } from 'antd';
 import ProgressBar from "./Progress.jsx";
 import WrappedApp from './Form.jsx';
 import CollectionsPage from './AddTrack.jsx';
+import { useHistory, withRouter } from "react-router-dom";
 
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
+
+
+function HomeButton() {
+  const history = useHistory();
+
+  function handleClick() {
+    history.push("/home");
+  }
+
+  return (
+    <button type="button" onClick={handleClick}>
+      Go home
+    </button>
+  );
+}
+
+const routeTrack = (props) => {
+  console.log(props)
+  // props.history.push('/dashboard')
+}
+
 
 class LayoutBack extends Component {
   state = {
@@ -28,7 +50,7 @@ class LayoutBack extends Component {
               <Icon type="edit" />
               <span>Track</span>
             </Menu.Item>
-            <Menu.Item key="2">
+            <Menu.Item onClick={routeTrack} key="2">
               <Icon type="line-chart" />
               <span>Dashboard</span>
             </Menu.Item>
@@ -70,4 +92,4 @@ class LayoutBack extends Component {
 }
 
 
-export default LayoutBack
+export default withRouter(LayoutBack)

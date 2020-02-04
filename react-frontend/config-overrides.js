@@ -11,6 +11,10 @@ const {
     }),
     addLessLoader({
       javascriptEnabled: true,
-      modifyVars: { "@primary-color": "#1DA57A" }
+      modifyVars: { "@primary-color": "#03a87c" }
     })
   );
+
+  // Green: 1DA57A
+  // Twitter blue: 26a8ed
+  // Lex green: 03a87c
